@@ -11,8 +11,9 @@
 html {
   border: purple;
   border-style: solid;
-  border-width: 30px;
+  border-width: 25px;
 }
+
 h1 {
   font-family: "oliver";
   font-weight: 100;

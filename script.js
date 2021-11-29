@@ -1,6 +1,6 @@
 // we define answers
 let answers = [
-  "It is certain",
+  "42.",
   "It is decidedly so",
   "Without a doubt",
   "Yes - definitely",
@@ -22,20 +22,24 @@ let answers = [
   "Concentrate and ask again",
 ];
 
-window.onload = function () {
-  let eight = document.querySelector("#eight");
-  let answer = document.querySelector("#answer");
-  let eightball = document.querySelector("#eight-ball");
-  let question = document.querySelector("#question");
+let eight = document.querySelector("#eight");
+let answer = document.querySelector("#answer");
+let eightball = document.querySelector("#eight-ball");
+let question = document.querySelector("#question");
 
-  eightball.addEventListener("click", function () {
-    if (question.value.length < 1) {
-      alert("Did you forget your question?");
-    } else {
-      eight.textContent = "";
-      let num = Math.floor(Math.random() * Math.floor(answers.length) + 1);
-      console.log(num);
-      answer.textContent = answers[num];
-    }
-  });
-};
+window.addEventListener("load", sidenVises);
+
+function sidenVises() {
+  eightball.addEventListener("click", clickEightBall);
+}
+
+function clickEightBall() {
+  if (question.value.length < 1) {
+    alert("Did you forget your question?");
+  } else {
+    eight.textContent = "";
+    let num = Math.floor(Math.random() * Math.floor(answers.length));
+    console.log(num);
+    answer.textContent = answers[num];
+  }
+}
